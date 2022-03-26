@@ -9,8 +9,9 @@ const Card = ({ name, phone, email, image, isFavorite }) => {
   const handleToggle = () => {
     setIsFavored(!isFavored);
   };
+
   return (
-    <div className="card">
+    <article className="card">
       <div className="card-header">
         <img className="card-img" src={image.url} alt={image.alt} />
         <button className="heart" onClick={handleToggle}>
@@ -26,7 +27,7 @@ const Card = ({ name, phone, email, image, isFavorite }) => {
         <p>{phone}</p>
         <p>{email}</p>
       </div>
-    </div>
+    </article>
   );
 };
 
