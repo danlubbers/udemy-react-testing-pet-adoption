@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cards.css";
 import Card from "../Card/Card";
+import { PetsContext } from "../Pets/Pets";
 
-const Cards = ({ cats, setCats }) => {
-  const updateFavorite = (index, favoriteStatus) => {
-    const updatedCats = [...cats];
-    updatedCats[index].favorite = favoriteStatus;
-    setCats(updatedCats);
-  };
+const Cards = () => {
+  const { cats } = useContext(PetsContext);
 
   return (
     <>
@@ -21,7 +18,6 @@ const Cards = ({ cats, setCats }) => {
               image={cat.image}
               isFavorite={cat.favorite}
               index={index}
-              updateFavorite={updateFavorite}
             />
           </div>
         );
